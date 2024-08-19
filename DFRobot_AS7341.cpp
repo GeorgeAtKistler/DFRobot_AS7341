@@ -241,7 +241,7 @@ uint8_t DFRobot_AS7341::readFlickerData(){
 
   if(retry == 0) DBG(" data access error")
   enableFlickerDetection(true);
-  delay(600);
+  //delay(600);
   readReg(REG_AS7341_STATUS,&flicker,1);
   enableFlickerDetection(false);
   switch(flicker){
@@ -278,7 +278,7 @@ uint16_t DFRobot_AS7341::getChannelData(uint8_t channel){
   readReg(REG_AS7341_CH0_DATA_H + channel*2,data+1,1);
   channelData = data[1];
   channelData = (channelData<<8) | data[0];
-  delay(50);
+  //delay(50);
   return channelData;
 }
 
@@ -549,10 +549,10 @@ void DFRobot_AS7341::setThreshold(uint16_t lowTh,uint16_t highTh){
 
 
   
-delay(10);
+//delay(10);
 
   
-  delay(10);
+  //delay(10);
 }
 uint16_t DFRobot_AS7341::getLowThreshold(){
   uint16_t data;
@@ -668,7 +668,7 @@ uint8_t DFRobot_AS7341::readReg(uint8_t reg, void* pBuf, size_t size)
   if ( _pWire->endTransmission() != 0) {
     return 0;
   }
-  delay(10);
+  //delay(10);
   _pWire->requestFrom(_address, size);
   for (uint16_t i = 0; i < size; i++) {
     _pBuf[i] = _pWire->read();
