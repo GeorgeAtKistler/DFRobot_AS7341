@@ -7,6 +7,8 @@
  *@version  V1.0
  *@date  2020-07-16
  *@url https://github.com/DFRobot/DFRobot_AS7341
+ *@notes Modified by George Ruinelli to remove not needed delays. 
+ *       See https://github.com/GeorgeAtKistler/DFRobot_AS7341/pull/1
 */
  
 #include "DFRobot_AS7341.h"
